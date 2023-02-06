@@ -1,5 +1,5 @@
 <h1 align="center"> HI I'M ANDREA </h1>
-<i  align="center" style="display: block;"> An High School Student from Italy </i>
+<h3  align="center" > An High School Student from Italy </h3>
 
 
 📚 I'm currently learning **java** ...
