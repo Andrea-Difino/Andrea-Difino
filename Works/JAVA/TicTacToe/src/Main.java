@@ -18,7 +18,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Inserisci riga e colonna:");
+            System.out.println("Type row and column");
 
             int r = sc.nextInt() - 1;
             int c = sc.nextInt() - 1;
@@ -28,17 +28,17 @@ public class Main {
             moves++;
 
             if(isWin()){
-                System.out.println("Hai vinto!");
+                System.out.println("Player 1 won!");
                 return;
-            };
+            }
 
             if(isLose()){
-                System.out.println("Hai perso!");
+                System.out.println("Player 2 won!");
                 return;
-            };
+            }
 
             if(moves == 9){
-                System.out.println("Pareggio");
+                System.out.println("Draw!");
                 return;
             }
         }
@@ -55,12 +55,12 @@ public class Main {
     }
 
     public static void createField() {
-        for (int i = 0; i < field.length; i++) {
+        for (char[] chars : field) {
             for (int j = 0; j < field[0].length; j++) {
                 if (j == 1) {
-                    System.out.print(" | " + field[i][j] + " | ");
+                    System.out.print(" | " + chars[j] + " | ");
                 } else {
-                    System.out.print(field[i][j]);
+                    System.out.print(chars[j]);
                 }
             }
             System.out.println();
@@ -72,7 +72,7 @@ public class Main {
         if (turn == 0) {
             turn++;
             if (field[r][c] == x || field[r][c] == O) {
-                System.out.println("Casella già occupata");
+                System.out.println("Box already occupied");
                 turn--;
             } else {
                 field[r][c] = x;
@@ -80,7 +80,7 @@ public class Main {
         } else {
             turn--;
             if (field[r][c] == x || field[r][c] == O) {
-                System.out.println("Casella già occupata");
+                System.out.println("Box already occupied");
                 turn++;
             } else {
                 field[r][c] = O;
@@ -92,44 +92,41 @@ public class Main {
 
         //ROWS CONTROL
         for (int i = 0; i < 3; i++) {
-            boolean tipo = true;
+            boolean type = true;
             for (int j = 0; j < field[i].length; j++){
-                if(field[i][j] == x){
-
-                } else{
-                    tipo = false;
+                if(field[i][j] != x){
+                    type = false;
                 }
             }
-            if(tipo){
+            if(type){
                 return true;
             }
         }
 
         //COLUMN CONTROL
         for (int i = 0; i < 3; i++) {
-            boolean tipo = true;
+            boolean type = true;
             for (int j = 0; j < field[i].length; j++){
-                if(field[j][i] == x ){
-
-                } else{
-                    tipo = false;
+                if(field[j][i] != x ){
+                    type = false;
                 }
             }
-            if(tipo){
+
+            if(type){
                 return true;
             }
         }
 
-        //CONTROLLO DIAGONALE
+        //DIAGONAL CONTROL
         for (int i = 0; i < 3; i++) {
-            int tipo = 0;
+            int type = 0;
 
             int j = i;
             if(field[j][i] == x){
-                tipo++;
+                type++;
             }
 
-            if(tipo == 3){
+            if(type == 3){
                 return true;
             }
         }
@@ -141,44 +138,41 @@ public class Main {
 
         //ROWS CONTROL
         for (int i = 0; i < 3; i++) {
-            boolean tipo = true;
+            boolean type = true;
             for (int j = 0; j < field[i].length; j++){
-                if(field[i][j] == O){
-
-                } else{
-                    tipo = false;
+                if(field[i][j] != O){
+                    type = false;
                 }
             }
-            if(tipo){
+
+            if(type){
                 return true;
             }
         }
 
         //COLUMN CONTROL
         for (int i = 0; i < 3; i++) {
-            boolean tipo = true;
+            boolean type = true;
             for (int j = 0; j < field[i].length; j++){
-                if(field[j][i] == O){
-
-                } else{
-                    tipo = false;
+                if(field[j][i] != O){
+                    type = false;
                 }
             }
-            if(tipo){
+            if(type){
                 return true;
             }
         }
 
-        //CONTROLLO DIAGONALE
+        //DIAGONAL CONTROL
         for (int i = 0; i < 3; i++) {
-            int tipo = 0;
+            int type = 0;
 
             int j = i;
             if(field[j][i] == O){
-                tipo++;
+                type++;
             }
 
-            if(tipo == 3){
+            if(type == 3){
                 return true;
             }
         }
