@@ -69,7 +69,7 @@ public class Meteor extends JLabel{
         int xPointLRocket = MyFrame.label.getX();
 
         for (Meteor m: meteors) {
-            if(m.y + m.size == 390 && ( ( (m.x + m.size) >= xPointLRocket && (m.x + m.size) <= xPointDRocket) || (m.x <= xPointDRocket && m.x >= xPointLRocket)))
+            if(m.y + m.size - 10 == 390 && ( ( (m.x + m.size) >= xPointLRocket && (m.x + m.size) <= xPointDRocket) || (m.x <= xPointDRocket && m.x >= xPointLRocket)))
             {
                 endCondition = true;
                 for (Meteor m1: meteors) {

@@ -93,6 +93,7 @@ public class MyFrame extends JFrame implements KeyListener, ActionListener{
                                 clip.start();
                                 startButton.setVisible(true);
                                 Meteor.meteors.clear();
+                                MyFrame.this.remove(meteor);
                                 rocksGeneration.stop();
                             }
 
@@ -122,7 +123,7 @@ public class MyFrame extends JFrame implements KeyListener, ActionListener{
                                 scoreAnimation.stop();
                             }
 
-                            Thread.sleep(100);
+                            Thread.sleep(90);
 
                         }catch (Exception e)
                         {
@@ -138,13 +139,13 @@ public class MyFrame extends JFrame implements KeyListener, ActionListener{
     @Override
     public void keyTyped(KeyEvent e) {
         switch (e.getKeyChar()) {
-            case 'a' -> {
+            case 'a', 'A' -> {
                 label.setLocation(label.getX() - 10, label.getY());
                 if (label.getX() < 0) {
                     label.setLocation(-15, label.getY());
                 }
             }
-            case 'd' -> {
+            case 'd', 'D' -> {
                 label.setLocation(label.getX() + 10, label.getY());
                 if (label.getX() > 430) {
                     label.setLocation(430, label.getY());
