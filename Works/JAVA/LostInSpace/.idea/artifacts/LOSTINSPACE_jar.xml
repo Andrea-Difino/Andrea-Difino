@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LOSTINSPACE:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/LOSTINSPACE_jar</output-path>
+    <root id="archive" name="LOSTINSPACE.jar">
+      <element id="module-output" name="LOSTINSPACE" />
+    </root>
+  </artifact>
+</component>

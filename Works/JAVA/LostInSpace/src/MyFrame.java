@@ -18,7 +18,7 @@ public class MyFrame extends JFrame implements KeyListener, ActionListener{
     JButton startButton;
     Thread rocksGeneration;
     Thread scoreAnimation;
-    File gameOverFile = new File("B:/lavoro/GITHUB 2/LostInSpace/audio/gameOver.wav");
+    File gameOverFile = new File("B:/lavoro/GITHUB/me/difinoAndrea/Works/JAVA/LostInSpace/audio/gameOver.wav");
     Clip clip;
 
     MyFrame() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
@@ -43,7 +43,7 @@ public class MyFrame extends JFrame implements KeyListener, ActionListener{
 
         this.add(startButton);
 
-        shuttle = new ImageIcon("B:/lavoro/GITHUB 2/LostInSpace/img/rocket.png");
+        shuttle = new ImageIcon("B:/lavoro/GITHUB/me/difinoAndrea/Works/JAVA/LostInSpace/img/rocket.png");
         Image image = shuttle.getImage();
         Image shuttle1 = image.getScaledInstance(70, 70,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
         shuttle = new ImageIcon(shuttle1);  // transform it back

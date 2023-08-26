@@ -10,7 +10,7 @@ public class Meteor extends JLabel{
     public static boolean endCondition;
     MyFrame frame;
     public static LinkedList<Meteor> meteors = new LinkedList<>();
-    ImageIcon meteor = new ImageIcon("B:/lavoro/GITHUB 2/LostInSpace/img/meteor.png");
+    ImageIcon meteor = new ImageIcon("img/meteor.png");
     Meteor(MyFrame frame){
         this.frame = frame;
         this.size = 30 + (int)((Math.floor(Math.random() * ((100 - 30)+ 1)) ));
