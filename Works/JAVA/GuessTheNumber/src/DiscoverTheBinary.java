@@ -15,6 +15,7 @@ public class DiscoverTheBinary extends JFrame implements ActionListener {
     JLabel finalResult;
     JButton startTheGame;
     DiscoverTheBinary(){
+
         this.setTitle("Guess The Binary Number");
         this.setSize(400, 200);
         this.setCursor(Cursor.HAND_CURSOR);
@@ -23,6 +24,7 @@ public class DiscoverTheBinary extends JFrame implements ActionListener {
         this.setResizable(true);
         this.getContentPane().setBackground(Color.WHITE);
 
+        //startGame button style
         startTheGame = new JButton("START");
         startTheGame.setBounds(310, 130, 80, 30);
         startTheGame.setHorizontalAlignment(JButton.CENTER);
@@ -94,44 +96,45 @@ public class DiscoverTheBinary extends JFrame implements ActionListener {
                 //if the answer is correct
                 if(myNumber == dNumber){
                     numberToGuess.setText("");
+                    /* animation to show the correct number */
+                    discoverNumber = new Thread(() -> {
+                        while(true){
 
-                    //animation to show the correct number
-                    discoverNumber = new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            while(true){
-                                for (int i = 0; i < sDNumber.length(); i++) {
-                                    numberToGuess.setText(numberToGuess.getText() + sDNumber.charAt(i));
-                                    try
-                                    {
-                                        Thread.sleep(1000);
-                                    }catch (Exception e)
-                                    {
-                                        System.out.println("Exception");
-                                    }
+                            for (int i = 0; i < sDNumber.length(); i++) {
 
+                                numberToGuess.setText(numberToGuess.getText() + sDNumber.charAt(i));
+                                try {
+                                    Thread.sleep(1000);
+                                } catch (Exception e12) {
+                                    System.out.println("Exception");
                                 }
-                                numberToGuess.setBorder(BorderFactory.createLineBorder(Color.GREEN, 1));
-                                finalResult.setText("WELL DONE");
-                                finalResult.setForeground(Color.GREEN);
-                                finalResult.setVisible(true);
-                                discoverNumber.stop();
 
                             }
 
+                            numberToGuess.setBorder(BorderFactory.createLineBorder(Color.GREEN, 1));
+                            finalResult.setText("WELL DONE");
+                            finalResult.setForeground(Color.GREEN);
+                            finalResult.setVisible(true);
+                            discoverNumber.stop();
+
                         }
+
                     });
+
                     discoverNumber.start();
-                }else{
+
+                } else {
                     numberToGuess.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
                     finalResult.setText("WRONG ANSWER");
                     finalResult.setForeground(Color.RED);
                     finalResult.setVisible(true);
                 }
-
             }
-        }catch (NumberFormatException e1){
-            System.out.println("Devi premere start e inserire un numero");
+
+        } catch (NumberFormatException e1) {
+
+            System.out.println("You must press start and type a number");
+
         }
 
     }
@@ -140,8 +143,8 @@ public class DiscoverTheBinary extends JFrame implements ActionListener {
 
         int number = (int)Math.floor(Math.random() * (1000 + 1));  //create a random number between 0 and 1000
         String s = Integer.toBinaryString(number);  //transform the decimal number to a binary one
-        int binaryNumber = Integer.parseInt(s);
 
-        return binaryNumber;
+        return Integer.parseInt(s);
+
     }
 }

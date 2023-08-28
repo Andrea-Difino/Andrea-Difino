@@ -21,6 +21,7 @@ public class DiscoverTheDecimal extends JFrame implements ActionListener{
         this.setResizable(true);
         this.getContentPane().setBackground(Color.WHITE);
 
+        //startGame button style
         startTheGame = new JButton("START");
         startTheGame.setBounds(310, 130, 80, 30);
         startTheGame.setHorizontalAlignment(JButton.CENTER);
@@ -30,14 +31,17 @@ public class DiscoverTheDecimal extends JFrame implements ActionListener{
         startTheGame.setBackground(Color.WHITE);
         startTheGame.addActionListener(this);
 
+        //container of our number
         insertNumberField = new JTextField();
         insertNumberField.setBounds(50, 60, 100, 30);
         insertNumberField.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
         insertNumberField.setHorizontalAlignment(JTextField.CENTER);
         insertNumberField.setFont(new Font(Font.SANS_SERIF, PLAIN, 15));
 
+
         control = new JButton();
         control.addActionListener(this);
+
 
         //icon resized
         controlIcon = new ImageIcon("img/check.png");
@@ -77,6 +81,7 @@ public class DiscoverTheDecimal extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
 
         if(e.getSource() == startTheGame){
+
             finalResult.setVisible(false);
             numberToGuess.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
             numberToGuess.setText(randomDecimalNumber() + "");
@@ -94,31 +99,28 @@ public class DiscoverTheDecimal extends JFrame implements ActionListener{
                     numberToGuess.setText("");
 
                     //animation to show the correct number
-                    discoverNumber = new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            while(true){
-                                for (int i = 0; i < bNumber.length(); i++) {
-                                    numberToGuess.setText(numberToGuess.getText() + bNumber.charAt(i));
-                                    try
-                                    {
+                    discoverNumber = new Thread(() -> {
+                        while(true){
+                            for (int i = 0; i < bNumber.length(); i++) {
+                                numberToGuess.setText(numberToGuess.getText() + bNumber.charAt(i));
+                                try
+                                {
 
-                                        Thread.sleep(1000);
-                                    }catch (Exception e)
-                                    {
-                                        System.out.println("Exception");
-                                    }
-
+                                    Thread.sleep(1000);
+                                }catch (Exception e12)
+                                {
+                                    System.out.println("Exception");
                                 }
-                                numberToGuess.setBorder(BorderFactory.createLineBorder(Color.GREEN, 1));
-                                finalResult.setText("WELL DONE");
-                                finalResult.setForeground(Color.GREEN);
-                                finalResult.setVisible(true);
-                                discoverNumber.stop();
 
                             }
+                            numberToGuess.setBorder(BorderFactory.createLineBorder(Color.GREEN, 1));
+                            finalResult.setText("WELL DONE");
+                            finalResult.setForeground(Color.GREEN);
+                            finalResult.setVisible(true);
+                            discoverNumber.stop();
 
                         }
+
                     });
                     discoverNumber.start();
                 }else{
@@ -130,17 +132,15 @@ public class DiscoverTheDecimal extends JFrame implements ActionListener{
 
             }
         }catch (NumberFormatException e1){
-            System.out.println("Devi premere start e inserire un numero");
+            System.out.println("You must press start and type a number");
         }
 
     }
 
     public int randomDecimalNumber(){
 
-        int number = (int)Math.floor(Math.random() * (1000 + 1));  //create a random number between 0 and 1000
-        //String s = Integer.toBinaryString(number);  //transform the decimal number to a binary one
-        //int binaryNumber = Integer.parseInt(s);
+        return (int)Math.floor(Math.random() * (1000 + 1));
 
-        return number;
     }
+
 }
