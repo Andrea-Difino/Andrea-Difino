@@ -54,6 +54,9 @@ public class MyFrame implements ActionListener {
         for (JButton b: buttons) {
             if (e.getSource() == b) {
                 switch (b.getText()) {
+                    case "0":
+                        textArea.setText(textArea.getText() + 0);
+                        break;
                     case "1":
                         textArea.setText(textArea.getText() + 1);
                         break;
@@ -88,10 +91,16 @@ public class MyFrame implements ActionListener {
                         textArea.setText(textArea.getText().substring(0, textArea.getText().length()-1));
                         break;
                     case "%":
-                        textArea.setText(textArea.getText() + "%");
+                        firstNumber = Integer.parseInt(textArea.getText());
+                        textArea.setText("");
+                        typeOfOperation = "%";
                         break;
                     case "=":
-                        secondNumber = Integer.parseInt(textArea.getText());
+                        if(typeOfOperation.equals("%")){
+                            secondNumber = 1;
+                        }else{
+                            secondNumber = Integer.parseInt(textArea.getText());
+                        }
                         makeOperation(typeOfOperation, firstNumber, secondNumber);
                         result.setText(finalResult);
                         break;
@@ -138,6 +147,12 @@ public class MyFrame implements ActionListener {
                     break;
             case "+":
                     finalResult = a+b + "";
+                    break;
+            case "%":
+                    finalResult = a/100 + "";
+                    break;
+            default:
+                    System.out.println("Operazione non conosciuta");
                     break;
         }
     }
