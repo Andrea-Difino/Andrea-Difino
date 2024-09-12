@@ -35,11 +35,17 @@ public class Main {
 
         while (true) {
 
-            System.out.println("Posizione da scoprire(x , y):");
+            System.out.println("\n");
+            if(turn == 0){
+                System.out.println("Player 1 Gioca");
+            }else{
+                System.out.println("Player 2 Gioca");
+            }
+            System.out.println("Posizione da scoprire x e a capo y:");
             System.out.println("Prima:");
             int x = sc.nextInt() - 1;
             int y = sc.nextInt() - 1;
-            if(x >= field[0].length || y >= field.length){
+            while(x >= field[0].length || y >= field.length){
                 System.out.println("Questi numeri non sono ammessi, scegline altri due (x, y)");
                 x = sc.nextInt() - 1;
                 y = sc.nextInt() - 1;
