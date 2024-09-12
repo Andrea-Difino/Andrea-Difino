@@ -86,9 +86,15 @@ public class MyFrame implements ActionListener {
                         break;
                     case "C":
                         textArea.setText("");
+                        finalResult = "";
                         break;
                     case "D":
-                        textArea.setText(textArea.getText().substring(0, textArea.getText().length()-1));
+                        if(textArea.getText().length() != 0){
+                            textArea.setText(textArea.getText().substring(0, textArea.getText().length()-1));
+                        }else{
+                            System.out.println("Non c'è nulla da cancellare");
+                        }
+
                         break;
                     case "%":
                         firstNumber = Integer.parseInt(textArea.getText());
@@ -96,11 +102,7 @@ public class MyFrame implements ActionListener {
                         typeOfOperation = "%";
                         break;
                     case "=":
-                        if(typeOfOperation.equals("%")){
-                            secondNumber = 1;
-                        }else{
-                            secondNumber = Integer.parseInt(textArea.getText());
-                        }
+                        secondNumber = Integer.parseInt(textArea.getText());
                         makeOperation(typeOfOperation, firstNumber, secondNumber);
                         result.setText(finalResult);
                         break;
@@ -137,6 +139,8 @@ public class MyFrame implements ActionListener {
             case "/":
                 if(b != 0){
                     finalResult = a/b + "";
+                }else{
+                    System.out.println("Impossibile dividere per zero");
                 }
                 break;
             case "x":
@@ -149,7 +153,7 @@ public class MyFrame implements ActionListener {
                     finalResult = a+b + "";
                     break;
             case "%":
-                    finalResult = a/100 + "";
+                    finalResult = a%b + "";
                     break;
             default:
                     System.out.println("Operazione non conosciuta");
