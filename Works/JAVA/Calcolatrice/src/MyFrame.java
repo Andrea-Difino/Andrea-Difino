@@ -27,8 +27,8 @@ public class MyFrame implements ActionListener {
     private JButton add8;
     private JButton add9;
     String finalResult = "";
-    int firstNumber = 0;
-    int secondNumber = 0;
+    Float firstNumber = 0.0f;
+    Float secondNumber = 0.0f;
     String typeOfOperation;
     LinkedList<JButton> buttons = new LinkedList<>();
     MyFrame(){
@@ -86,7 +86,7 @@ public class MyFrame implements ActionListener {
                         break;
                     case "C":
                         textArea.setText("");
-                        finalResult = "";
+                        result.setText("");
                         break;
                     case "D":
                         if(textArea.getText().length() != 0){
@@ -97,34 +97,37 @@ public class MyFrame implements ActionListener {
 
                         break;
                     case "%":
-                        firstNumber = Integer.parseInt(textArea.getText());
+                        firstNumber = Float.parseFloat(textArea.getText());
                         textArea.setText("");
                         typeOfOperation = "%";
                         break;
                     case "=":
-                        secondNumber = Integer.parseInt(textArea.getText());
+                        secondNumber = Float.parseFloat(textArea.getText());
                         makeOperation(typeOfOperation, firstNumber, secondNumber);
                         result.setText(finalResult);
                         break;
                     case "/":
-                        firstNumber = Integer.parseInt(textArea.getText());
+                        firstNumber = Float.parseFloat(textArea.getText());
                         textArea.setText("");
                         typeOfOperation = "/";
                         break;
                     case "x":
-                        firstNumber = Integer.parseInt(textArea.getText());
+                        firstNumber = Float.parseFloat(textArea.getText());
                         textArea.setText("");
                         typeOfOperation = "x";
                         break;
                     case "-":
-                        firstNumber = Integer.parseInt(textArea.getText());
+                        firstNumber = Float.parseFloat(textArea.getText());
                         textArea.setText("");
                         typeOfOperation = "-";
                         break;
                     case "+":
-                        firstNumber = Integer.parseInt(textArea.getText());
+                        firstNumber = Float.parseFloat(textArea.getText());
                         textArea.setText("");
                         typeOfOperation = "+";
+                        break;
+                    case ",":
+                        textArea.setText(textArea.getText() + ".");
                         break;
                     default:
                         System.out.println("Ancora da assegnare");
@@ -133,7 +136,7 @@ public class MyFrame implements ActionListener {
         }
     }
 
-    private void makeOperation(String type, int a, int b){
+    private void makeOperation(String type, float a, float b){
 
         switch (type){
             case "/":
