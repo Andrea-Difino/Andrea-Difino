@@ -82,7 +82,7 @@ button:active{
 
 #output{
     border: 1.5px solid rgba(255, 255, 255, 0.67);
-    box-shadow: -10px 10px 30px 5px rgb(0, 0, 0), 10px -10px 30px 5px rgba(87, 64, 20, 0.419);
+    box-shadow: -10px 10px 25px 10px rgb(0, 0, 0), 10px -10px 25px 10px #1b1b1b;
     width: 80%;
     height: 250px;
     padding: 20px;
