@@ -2,7 +2,7 @@
 
 Il sito permette di convertire una registrazione vocale live in testo. 
 
-<h4 align="left">Funzionalità</h4>
+**Funzionalità**
 
 Sono presenti 4 bottoni
 I tre bottoni superiori servono rispettivamente a:
