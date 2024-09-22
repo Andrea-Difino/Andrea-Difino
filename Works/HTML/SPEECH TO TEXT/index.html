@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>SPEECH TO TEXT</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main>
+            <h1 style="text-align: center;width:70%;">Converti L'audio In Testo</h1>
+            <div id="buttonsContainer">
+                <button id="delete">
+                    <img src="img/delete.svg" alt="delete" width="40%">
+                </button>
+                <button id="startButton">Start Voice Input</button>
+                <button id="stopButton">
+                    <img src="img/stop.svg" alt="delete" width="50%">
+                </button>
+            </div>
+            <div id="output">
+                       
+            </div>
+            <button id="download">
+                <img src="img/download.svg" alt="delete" width="40%">
+            </button>
+        </main>
+        
+        <script>
+            let btn = document.getElementById("download")
+            let text = document.getElementById("output")
+
+            // eventListener "click" on button
+            btn.addEventListener("click", () => {
+                let valueinput = text.innerText
+
+                let blobdtMIME = new Blob([valueinput], { type: "text/plain" })
+                let url = URL.createObjectURL(blobdtMIME)
+                let anele = document.createElement("a")
+                anele.setAttribute("download", "Downloaded Successfully");
+                anele.href = url;
+                anele.click();
+                console.log(blobdtMIME)
+            })
+        </script>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
