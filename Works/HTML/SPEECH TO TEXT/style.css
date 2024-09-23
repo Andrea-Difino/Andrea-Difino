@@ -182,6 +182,10 @@ button:active{
         font-size: 80px;
     }
 
+    #loadtext{
+        font-size: 150px;
+    }
+
     main h3{
         font-family: "Londrina Solid", sans-serif;
         font-weight: 400;
@@ -206,6 +210,10 @@ button:active{
         height: fit-content;
         gap: 30px;
         text-align: center;
+    }
+
+    #loadtext{
+        font-size: 100px;
     }
 
     #left-container{
