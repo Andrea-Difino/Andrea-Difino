@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap');
 
 *{
     padding: 0;
@@ -9,32 +11,65 @@
 :root{
     --background: #121212;
     --gold: #DEB566;
+    --mainColor: #3EC2AB;
+    --lighterColor: #9DEBDD;
+}
+
+#loadingScreen{
+    width: 100vw;
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    opacity: 1;
+    z-index: 1000;
+    background: linear-gradient(210deg, var(--mainColor) 0%, var(--lighterColor) 100%);
+    transition: opacity 1s ease;
+    background-repeat: no-repeat;
+}
+
+#loadtext{
+    font-family: "Londrina Shadow", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 200px;
+    text-align: center;
 }
 
 html{
-    font-family: 'Lexend', sans-serif;
     color: white;
 }
 
 body{
-    background-color: var(--background);
+    position: relative;
+    background: linear-gradient(210deg, var(--mainColor) 0%, var(--lighterColor) 100%);
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: fit-content;
 }
 
 main{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;  
+    flex-direction: row;
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     gap: 50px;
 }
 
-main > h1{
-    font-size: 50px;
+main h1{
+    font-family: "Londrina Solid", sans-serif;
     font-weight: 400;
+    font-style:normal;
+    font-size: 100px;
+}
+
+main h3{
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 400;
+    font-style:normal;
+    font-size: 50px;
 }
 
 #buttonsContainer{
@@ -42,6 +77,23 @@ main > h1{
     flex-direction:row;
     align-items:center;
     gap:30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+#stopAndDelete{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#left-container{
+    width:35%;
+    align-self:flex-start;
+    padding-top:100px;
+    padding-left:100px;
 }
 
 button:hover{
@@ -51,74 +103,154 @@ button:hover{
 button{
     outline: none;
     stroke: none;
-    border: none;
-    border-radius: 20px;
+    border-radius: 60px;
     color: var(--gold);
     font-family: 'Lexend',sans-serif;
     font-weight: semibold;
-    background-color: #121212;
-    box-shadow: inset 2px 2px 0px 0px rgba(255, 255, 255, 0.67), 2px 2px 5px 0px rgba(0, 0, 0, 0.773);
+    background-color: transparent;
 }
 
 button:active{
-    box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, 0.67),inset 2px 2px 5px 0px rgba(0, 0, 0, 0.773);
+    width: 20px;
+    box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.276);
 }
 
 #delete, #stopButton{
-    width: 70px;
-    height: 70px;
+    border: 2px solid white;
+    width: 80px;
+    height: 80px;
+    box-shadow: 0px 0px 0px 6px rgba(34, 34, 34, 0.217);
 }
 
 #download{
-    width: 100px;
-    height: 70px;
+    border: 2px solid white;
+    width: 120px;
+    height: 80px;
+    box-shadow: 0px 0px 0px 6px rgba(34, 34, 34, 0.217);
 }
 
 #startButton{
+    font-family: 'Lexend', sans-serif;
     width: 250px;
-    height: 100px;
+    height: 80px;
     font-size: 20px;
+    border: none;
+    color: var(--mainColor);
+    background-color: white;
 }
 
 #output{
-    border: 1.5px solid rgba(255, 255, 255, 0.67);
-    box-shadow: -10px 10px 25px 10px rgb(0, 0, 0), 10px -10px 25px 10px #1b1b1b;
-    width: 80%;
-    height: 250px;
+    border: 5px solid rgba(255, 255, 255, 0.67);
+    width: 65%;
+    height: 450px;
+    font-size: 18px;
     padding: 20px;
     border-radius: 20px;
     overflow-y: scroll;
+    text-align: left;
+}
+
+#output-div{
+    gap: 40px;
+    width:70%;
+    height: 100%;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
 }
 
 #output::-webkit-scrollbar{
     width:18px;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     border:1px solid rgba(255, 255, 255, 0.511);
 }
 
 #output::-webkit-scrollbar-thumb{
     background-color: rgba(255, 255, 255, 0.511);
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
-@media only screen and (max-width: 425px){
-	/*Small smartphones [325px -> 425px]*/
+@media screen and (max-width: 1600px){
+    main h1{
+        font-family: "Londrina Solid", sans-serif;
+        font-weight: 400;
+        font-style:normal;
+        font-size: 80px;
+    }
+
+    main h3{
+        font-family: "Londrina Solid", sans-serif;
+        font-weight: 400;
+        font-style:normal;
+        font-size: 30px;
+    }
+
+    main{
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        height: 100vh;
+        gap: 0px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    main{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: fit-content;
+        gap: 30px;
+        text-align: center;
+    }
+
+    #left-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+        text-align: center;
+        width: 80%;
+        align-self:center;
+        padding-top:0px;
+        padding-left:0px;
+        
+    }
+
+    #output{
+        border: 5px solid rgba(255, 255, 255, 0.67);
+        width: 90%;
+        height: 450px;
+        font-size: 18px;
+        padding: 20px;
+        border-radius: 20px;
+        overflow-y: scroll;
+        text-align: left;
+    }
+    
+
+    #output-div{
+        gap: 40px;
+        width:90%;
+        height: 100%;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+    }
+
     #buttonsContainer{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
         justify-content: center;
+        gap:30px;
+        margin-top: 20px;
         flex-wrap: wrap;
-    }
-
-    #buttonsContainer #delete{
-        order: 3;
-    }
-
-    #buttonsContainer #startButton{
-        order: 1;
-    }
-
-    #buttonsContainer #stopButton{
-        order: 2;
     }
 }

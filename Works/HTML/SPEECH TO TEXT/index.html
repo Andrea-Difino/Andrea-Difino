@@ -13,23 +13,32 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div id="loadingScreen">
+            <h1 id="loadtext">SPEECH <br> TO TEXT</h1>
+        </div>
         <main>
-            <h1 style="text-align: center;width:70%;">Converti L'audio In Testo</h1>
-            <div id="buttonsContainer">
-                <button id="delete">
-                    <img src="img/delete.svg" alt="delete" width="40%">
-                </button>
-                <button id="startButton">Start Voice Input</button>
-                <button id="stopButton">
-                    <img src="img/stop.svg" alt="delete" width="50%">
+            <div id="left-container">
+                <h1 >SCHIACCIA IL BOTTONE</h1>
+                <h3 >PER PARLARE</h3>
+                <div id="buttonsContainer">
+                    <button id="startButton">Start Recording</button>
+                    <div id="stopAndDelete">
+                        <button id="stopButton">
+                            <img src="img/stop.svg" alt="delete" width="60%">
+                        </button>
+                        <button id="delete">
+                            <img src="img/delete.svg" alt="delete" width="50%">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="output-div">
+                <div id="output">
+                </div>
+                <button id="download">
+                    <img src="img/download.svg" alt="delete" width="40%">
                 </button>
             </div>
-            <div id="output">
-                       
-            </div>
-            <button id="download">
-                <img src="img/download.svg" alt="delete" width="40%">
-            </button>
         </main>
         
         <script>
@@ -46,7 +55,6 @@
                 anele.setAttribute("download", "Downloaded Successfully");
                 anele.href = url;
                 anele.click();
-                console.log(blobdtMIME)
             })
         </script>
         

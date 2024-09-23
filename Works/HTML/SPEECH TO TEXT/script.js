@@ -2,6 +2,7 @@ const startButton = document.getElementById('startButton');
 const stopButton = document.getElementById('stopButton');
 const outputDiv = document.getElementById('output');
 const deleteBtn = document.getElementById('delete');
+const loadingDiv = document.getElementById('loadingScreen');
 const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
 
 var userLang = navigator.language || navigator.userLanguage; 
@@ -32,7 +33,7 @@ recognition.onend = () => {
     if (recognizing) {
         recognition.start(); // Automatically restart recognition if still recognizing
     } else {
-        startButton.textContent = 'Start Voice Input'; // Reset button text if recognition was stopped manually
+        startButton.textContent = 'Start Recording'; // Reset button text if recognition was stopped manually
     }
 };
 
@@ -48,10 +49,22 @@ startButton.addEventListener('click', () => {
 stopButton.addEventListener('click', () => {
     recognizing = false;
     recognition.stop(); // Manually stop the recognition
-    startButton.textContent = 'Start Voice Input';
+    startButton.textContent = 'Start Recording';
 });
 
 // Clear output
 deleteBtn.addEventListener('click', () => {
     deleteF();
 });
+
+window.addEventListener('load', function(){
+    setTimeout(function() {
+        loadingDiv.style.opacity = '0';
+        
+        setTimeout(function() {
+            loadingDiv.style.display = 'none';
+        }, 1000);
+        
+    }, 2000); 
+})
+
