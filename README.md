@@ -1,7 +1,8 @@
 <h1 align="center">Hi 👋, I'm Andrea</h1>
 <h3 align="center">A passionate frontend developer - designer, from Italy</h3>
 
-- 🌱 I’m currently learning **Qt** and **C++**
+- 🌱 I’m currently learning **Vue**
+- ✨ I'm making a Todo-app with Auth and Database using **Vue+Vite**, **Supabase** and **Netlify**
 
 - 📫 How to reach me **adifino13@gmail.com**
 
