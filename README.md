@@ -2,8 +2,9 @@
 <h3 align="center">A passionate frontend developer - designer, from Italy</h3>
 
 - 🌱 I’m currently learning **Vue**
-- ✨ I'm creating a Todo application with Google Auth and Database using **Vue+Vite**, **Supabase** and **Netlify**
-
+- ✨ I'm creating:
+  1.  Todo application with Google Auth and Database using **Vue+Vite**, **Supabase** and **Netlify**
+  2.  NLP model
 - 📫 How to reach me **adifino13@gmail.com**
 
 <h3 align="left">Connect with me:</h3>
