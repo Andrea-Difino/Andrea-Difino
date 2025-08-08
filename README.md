@@ -4,7 +4,7 @@
 - 🌱 I’m currently learning **Vue**
 - ✨ I'm creating:
   1.  Todo application with Google Auth and Database using **Vue+Vite**, **Supabase** and **Netlify**
-  2.  NLP model
+  2.  Freestyle Model able to make people train their freestyle in real-time
 - 📫 How to reach me **adifino13@gmail.com**
 
 <h3 align="left">Connect with me:</h3>
