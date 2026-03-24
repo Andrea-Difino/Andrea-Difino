@@ -3,8 +3,7 @@
 
 - 🐳 I'm diving into **NN**
 - ✨ I'm creating:
-  1.  Todo application with Google Auth and Database using **Vue+Vite**, **Supabase** and **Netlify**
-  2.  Freestyle Model able to make people train their freestyle in real-time
+  1.  Freestyle Model able to make people train their freestyle in real-time
 - 📫 How to reach me **adifino13@gmail.com**
 
 <h3 align="left">Connect with me:</h3>
