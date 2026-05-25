@@ -4,6 +4,7 @@
 - 🐳 I'm diving into **NN**
 - ✨ I'm creating:
   1.  Freestyle Model able to make people train their freestyle in real-time
+  2.  Data pipeline for FAQs generation using Databricks in Danfoss S.r.l
 - 📫 How to reach me **adifino13@gmail.com**
 
 <h3 align="left">Connect with me:</h3>
