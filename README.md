@@ -3,7 +3,7 @@
 
 - 🐳 I'm diving into **NN**
 - ✨ I'm creating:
-  1.  Freestyle Model able to make people train their freestyle in real-time
+  1.  ML pipeline to censor sensitive data from audios - [repo link](https://github.com/Andrea-Difino/WaveRedact)
   2.  Data pipeline for FAQs generation using Databricks during the stage at Danfoss S.r.l
 - 📫 How to reach me **adifino13@gmail.com**
 
