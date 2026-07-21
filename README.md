@@ -29,4 +29,8 @@
 ![Static Badge](https://img.shields.io/badge/NumPy-%23013243?style=for-the-badge&logo=NumPy&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/Tailwind-%2306B6D4?style=for-the-badge&logo=Tailwind%20css&logoColor=white)
 
+## Softwares
+![Static Badge](https://img.shields.io/badge/blender-orange?style=for-the-badge&logo=blender&logoColor=white)
+
+
 
