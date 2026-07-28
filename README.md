@@ -18,7 +18,8 @@
 ![Static Badge](https://img.shields.io/badge/C-%23A8B9CC?style=for-the-badge&logo=C&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/css-%23663399?style=for-the-badge&logo=css&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/HTML5-%23E34F26?style=for-the-badge&logo=HTML5&logoColor=white)
-![Static Badge](https://img.shields.io/badge/Java-orange?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Java-red?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Rust-orange?style=for-the-badge&logo=Rust&logoColor=white)
 
 
 ## Tools & Frameworks
