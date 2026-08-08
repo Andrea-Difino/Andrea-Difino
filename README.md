@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Andrea</h1>
 <h3 align="center">A passionate Italian developer interested in AI</h3>
 
-- 🐳 I'm diving into **NN**
+- 🐳 I'm diving into **NN** and learning **Rust**
 - ✨ I'm creating:
   1.  ML pipeline to censor sensitive data from audios - [repo link](https://github.com/Andrea-Difino/WaveRedact)
 - 📫 How to reach me **adifino13@gmail.com**
